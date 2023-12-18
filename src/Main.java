@@ -1,12 +1,12 @@
 import java.util.Arrays;
-
+import search.BinarySearch;
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("am running");
 
-         int[] unSortedArray = new int[100000];
+         int[] unSortedArray = new int[10];
 
         for (int i = 0; i < unSortedArray.length; i++) {
             unSortedArray[i]=  (int)(Math.random() * 100 +1);
@@ -24,19 +24,22 @@ public class Main {
 
 //        System.out.println(Arrays.toString(selectionSortedArray));
 
-//        MergeSort mergeSortAlgorithm = new MergeSort(unSortedArray);
-//        mergeSortAlgorithm.mergeSort(unSortedArray);
+        MergeSort mergeSortAlgorithm = new MergeSort(unSortedArray);
+        mergeSortAlgorithm.mergeSort(unSortedArray);
 //        System.out.println(Arrays.toString(unSortedArray));
 
 
 
-        QuickSort.sorted(unSortedArray, 0, unSortedArray.length -1);
+//        QuickSort.sorted(unSortedArray, 0, unSortedArray.length -1);
 
 
         long endTime = System.currentTimeMillis();
         System.out.printf("time take by algorithm %s\n" , startTime - endTime);
         System.out.println(Arrays.toString(unSortedArray));
 
+        int Search = BinarySearch.Search(unSortedArray,50,0,unSortedArray.length -1);
+
+       System.out.println(Search);
     }
 
 
